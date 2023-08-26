@@ -19,4 +19,12 @@ public class Quadrado extends Forma {
         double area = this.lados.get(0)* this.lados.get(0);
         this.setArea(area);
     }
+
+    @Override
+    public String toString() {
+        return "Quadrado{" +
+                "Area: "+this.getArea()+
+                "Perimetro: "+this.getPerimetro()+
+                '}';
+    }
 }

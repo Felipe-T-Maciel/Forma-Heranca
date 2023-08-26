@@ -46,6 +46,7 @@ public class Main {
                                 [2] Retangulo
                                 [3] Circulo
                                 [4] Triangulo
+                                [5] Listar todas as Formas
                 
                 ---------------------------------------------""");
         System.out.print(">  ");
@@ -58,6 +59,8 @@ public class Main {
                 lados.add(sc.nextDouble());
                 Forma quadrado = new Quadrado(0 ,0, lados);
                 quadrado.calculaArea();
+                System.out.println(quadrado.getArea());
+                Forma.formas.add(quadrado);
             }
 
             case 2 -> {
@@ -68,6 +71,8 @@ public class Main {
                 lados.add(sc.nextDouble());
                 Forma retangulo = new Retangulo(0 ,0, lados);
                 retangulo.calculaArea();
+                Forma.formas.add(retangulo);
+
             }
 
             case 3 -> {
@@ -88,6 +93,7 @@ public class Main {
                             System.out.println("Circulo adicionado com sucesso!");
                             Forma circulo = new Circulo(0 ,0, 0, raio);
                             circulo.calculaArea();
+                            Forma.formas.add(circulo);
                         }
                     }
 
@@ -98,9 +104,16 @@ public class Main {
                             System.out.println("Circulo adicionado com sucesso!");
                             Forma circulo = new Circulo(0 ,0, diametro, 0);
                             circulo.calculaArea();
+                            Forma.formas.add(circulo);
+
                         }
                     }
+
+                    default -> {
+                        System.out.println("Valor invalido");
+                    }
                 }
+
             }
 
             case 4 -> {
@@ -112,6 +125,10 @@ public class Main {
                 System.out.println("Digite a medida do terceiro lado do triangulo: ");
                 lados.add(sc.nextDouble());
                 professor.diferenciarTriangulo(lados);
+            }
+
+            case 5 -> {
+                professor.listarFormas();
             }
         }
     }

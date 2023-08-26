@@ -18,4 +18,11 @@ public class Retangulo extends Forma {
         double area = this.lados.get(0)*this.lados.get(1);
         this.setArea(area);
     }
+
+    public String toString() {
+        return "Retangulo{" +
+                "Area: "+this.getArea()+
+                "Perimetro: "+this.getPerimetro()+
+                '}';
+    }
 }

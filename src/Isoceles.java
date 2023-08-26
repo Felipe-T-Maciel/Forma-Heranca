@@ -10,13 +10,15 @@ public class Isoceles extends Triangulo{
 
     @Override
     void calculaPerimetro() {
-
+        double perimetro = (ladoDiferente()+2)*ladoIgual();
+        this.setPerimetro(perimetro);
     }
 
     @Override
     void calculaArea() {
-        double altura = Math.sqrt((ladoIgual()*ladoIgual())-((ladoDiferente()*ladoDiferente())))
-        double area =
+        double altura = Math.sqrt((ladoIgual()*ladoIgual())-((ladoDiferente()*ladoDiferente())/4));
+        double area = (ladoDiferente()*altura)/2;
+        this.setArea(area);
     }
 
 
@@ -46,5 +48,13 @@ public class Isoceles extends Triangulo{
             ladoigual = this.lados.get(1);
         }
         return ladoigual;
+    }
+
+    @Override
+    public String toString() {
+        return "Isoceles{" +
+                "Area: "+this.getArea()+
+                "Perimetro: "+this.getPerimetro()+
+                '}';
     }
 }

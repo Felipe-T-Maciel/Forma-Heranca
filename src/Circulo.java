@@ -32,4 +32,14 @@ public class Circulo extends Forma {
         return raio;
     }
 
+    @Override
+    public String toString() {
+        return "Circulo{" +
+                "Area: "+this.getArea()+
+                "Perimetro: "+this.getPerimetro()+
+                "Raio: "+this.getRaio()+
+                "Diametro: "+this.getDiametro()+
+                '}';
+    }
+
 }

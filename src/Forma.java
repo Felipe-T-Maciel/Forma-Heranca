@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 abstract public class Forma {
+    static public ArrayList<Forma> formas = new ArrayList<>();
     private double area;
     private double perimetro;
 
