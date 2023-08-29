@@ -1,11 +1,13 @@
 import java.util.ArrayList;
 
 public abstract class Triangulo extends Forma {
-    public Triangulo(double area, double perimetro) {
-        super(area, perimetro);
-    }
+    static public ArrayList<Forma> isoceless = new ArrayList<>();
+    static public ArrayList<Forma> equilateros = new ArrayList<>();
+    static public ArrayList<Forma> escalenos = new ArrayList<>();
 
-    abstract void calculaPerimetro();
+    public Triangulo(String nome) {super(nome);}
 
-    abstract void calculaArea();
+    abstract double calculaPerimetro();
+
+    abstract double calculaArea();
 }

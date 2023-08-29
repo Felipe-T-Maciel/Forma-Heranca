@@ -2,27 +2,22 @@ import java.util.ArrayList;
 
 public class Retangulo extends Forma {
     private final ArrayList<Double> lados;
-    public Retangulo(double area, double perimetro, ArrayList<Double> lados) {
-        super(area, perimetro);
+
+    public Retangulo(String nome,ArrayList<Double> lados) {
+        super(nome);
         this.lados = lados;
+        retangulos.add(this);
+        formas.add(this);
     }
 
     @Override
-    void calculaPerimetro() {
-        double perimetro = 2*(this.lados.get(0) + this.lados.get(1));
-        this.setPerimetro(perimetro);
+    double calculaPerimetro() {
+        return 2*(this.lados.get(0) + this.lados.get(1));
     }
 
     @Override
-    void calculaArea() {
-        double area = this.lados.get(0)*this.lados.get(1);
-        this.setArea(area);
+    double calculaArea() {
+        return this.lados.get(0)*this.lados.get(1);
     }
 
-    public String toString() {
-        return "Retangulo{" +
-                "Area: "+this.getArea()+
-                "Perimetro: "+this.getPerimetro()+
-                '}';
-    }
 }

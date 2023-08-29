@@ -2,32 +2,22 @@ import java.util.ArrayList;
 
 abstract public class Forma {
     static public ArrayList<Forma> formas = new ArrayList<>();
-    private double area;
-    private double perimetro;
+    static public ArrayList<Forma> circulos = new ArrayList<>();
+    static public ArrayList<Forma> quadrados = new ArrayList<>();
+    static public ArrayList<Forma> retangulos = new ArrayList<>();
+    static public ArrayList<Forma> triangulos = new ArrayList<>();
+    private String nome;
+    public Forma(String nome){this.nome = nome;}
 
-    public Forma(double area, double perimetro){
-        this.area = area;
-        this.perimetro = perimetro;
+    abstract double calculaPerimetro();
+
+    abstract double calculaArea();
+
+    @Override
+    public String toString() {
+        return ""+this.nome+" {" +
+                "area=" + this.calculaArea() +
+                ", perimetro=" + this.calculaPerimetro() +
+                '}';
     }
-
-    abstract void calculaPerimetro();
-
-    abstract void calculaArea();
-
-    public double getArea() {
-        return area;
-    }
-
-    public double getPerimetro() {
-        return perimetro;
-    }
-
-    public void setArea(double area) {
-        this.area = area;
-    }
-
-    public void setPerimetro(double perimetro) {
-        this.perimetro = perimetro;
-    }
-
 }

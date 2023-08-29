@@ -2,29 +2,24 @@ import java.util.ArrayList;
 
 public class Quadrado extends Forma {
     private final ArrayList<Double> lados;
-    public Quadrado(double area, double perimetro, ArrayList<Double> lados) {
-        super(area, perimetro);
+
+    public Quadrado(String nome,ArrayList<Double> lados) {
+        super(nome);
         this.lados = lados;
+        quadrados.add(this);
+        formas.add(this);
+
     }
 
 
     @Override
-    void calculaPerimetro() {
-        double perimetro = this.lados.get(0)*4;
-        this.setPerimetro(perimetro);
+    double calculaPerimetro() {
+        return this.lados.get(0)*4;
     }
 
     @Override
-    void calculaArea() {
-        double area = this.lados.get(0)* this.lados.get(0);
-        this.setArea(area);
+    double calculaArea() {
+        return this.lados.get(0)* this.lados.get(0);
     }
 
-    @Override
-    public String toString() {
-        return "Quadrado{" +
-                "Area: "+this.getArea()+
-                "Perimetro: "+this.getPerimetro()+
-                '}';
-    }
 }

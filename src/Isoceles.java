@@ -3,22 +3,25 @@ import java.lang.Math;
 
 public class Isoceles extends Triangulo{
     private final ArrayList<Double> lados;
-    public Isoceles(double area, double perimetro, ArrayList<Double> lados) {
-        super(area, perimetro);
+
+    public Isoceles(String nome,ArrayList<Double> lados) {
+        super(nome);
         this.lados = lados;
+        isoceless.add(this);
+        formas.add(this);
+        triangulos.add(this);
+
     }
 
     @Override
-    void calculaPerimetro() {
-        double perimetro = (ladoDiferente()+2)*ladoIgual();
-        this.setPerimetro(perimetro);
+    double calculaPerimetro() {
+        return  (ladoDiferente()+2)*ladoIgual();
     }
 
     @Override
-    void calculaArea() {
+    double calculaArea() {
         double altura = Math.sqrt((ladoIgual()*ladoIgual())-((ladoDiferente()*ladoDiferente())/4));
-        double area = (ladoDiferente()*altura)/2;
-        this.setArea(area);
+        return  (ladoDiferente()*altura)/2;
     }
 
 
@@ -33,12 +36,12 @@ public class Isoceles extends Triangulo{
         }else if(this.lados.get(1).equals(this.lados.get(2)) && !this.lados.get(1).equals(this.lados.get(0))){
             ladoDiferente = this.lados.get(0);
         }
-
         return ladoDiferente;
     }
 
     private double ladoIgual() {
         double ladoigual = 0.0;
+
         if(this.lados.get(0).equals(this.lados.get(1)) && !this.lados.get(0).equals(this.lados.get(2))){
             ladoigual = this.lados.get(0);
         }else if(this.lados.get(0).equals(this.lados.get(2)) && !this.lados.get(0).equals(this.lados.get(1))){
@@ -50,11 +53,4 @@ public class Isoceles extends Triangulo{
         return ladoigual;
     }
 
-    @Override
-    public String toString() {
-        return "Isoceles{" +
-                "Area: "+this.getArea()+
-                "Perimetro: "+this.getPerimetro()+
-                '}';
-    }
 }
